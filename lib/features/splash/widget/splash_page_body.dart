@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/app/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SplashPageBody extends StatefulWidget {
   const SplashPageBody({super.key});
@@ -12,12 +13,17 @@ class _SplashPageBodyState extends State<SplashPageBody> {
   @override
   void initState() {
     super.initState();
-    _navigateToOnboarding();
+    _checkAuthAndNavigate();
   }
 
-  void _navigateToOnboarding() {
+  void _checkAuthAndNavigate() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
+      final session = Supabase.instance.client.auth.currentSession;
+      if (session != null) {
+        Navigator.pushReplacementNamed(context, AppRoutes.homeRoute);
+      } else {
+        Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
+      }
     });
   }
 

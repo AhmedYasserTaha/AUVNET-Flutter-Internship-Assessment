@@ -6,6 +6,7 @@ class CustomTextFormField extends StatefulWidget {
   final IconData icon;
   final TextEditingController? controller;
   final bool obscureText;
+  final String? Function(String?)? validator;
 
   const CustomTextFormField({
     super.key,
@@ -13,6 +14,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.icon,
     this.controller,
     this.obscureText = false,
+    this.validator,
   });
 
   @override
@@ -33,6 +35,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
+        validator: widget.validator,
         controller: widget.controller,
         obscureText: _isObscured,
         decoration: InputDecoration(
