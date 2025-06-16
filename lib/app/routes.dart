@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/features/auth/presentation/pages/login/login_page.dart';
 import 'package:e_commerce_app/features/auth/presentation/pages/sign_up/sign_up_page.dart';
-import 'package:e_commerce_app/features/home/home_page.dart';
+import 'package:e_commerce_app/features/home/home_layout.dart';
 import 'package:e_commerce_app/features/onbording/onboarding_page.dart';
 import 'package:e_commerce_app/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class AppRoutes {
       case signUpRoute:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case homeRoute:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => const HomeLayout());
       default:
         return MaterialPageRoute(
           builder:
