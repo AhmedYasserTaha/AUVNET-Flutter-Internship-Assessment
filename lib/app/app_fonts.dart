@@ -13,13 +13,18 @@ abstract class AppFonts {
     fontWeight: FontWeight.w500,
     color: AppColors.whiteColor,
   );
+  static TextStyle font14MediumwhiteColor = GoogleFonts.rubik(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.whiteColor,
+  );
 
   static TextStyle font14light = GoogleFonts.mulish(
     fontSize: 14,
     fontWeight: FontWeight.w300,
     color: AppColors.blackColor.withOpacity(0.5),
   );
-  static TextStyle font14Medium = GoogleFonts.rubik(
+  static TextStyle font14Mediumblack33Color = GoogleFonts.rubik(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: AppColors.black33Color,
@@ -28,5 +33,10 @@ abstract class AppFonts {
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.greyColor,
+  );
+  static TextStyle font14Bold = GoogleFonts.rubik(
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: AppColors.blueColor,
   );
 }

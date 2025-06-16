@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:e_commerce_app/app/app_colors.dart';
 import 'package:e_commerce_app/app/app_fonts.dart';
+import 'package:e_commerce_app/app/routes.dart';
+import 'package:e_commerce_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -22,8 +24,8 @@ class _OnboardingPageBodyState extends State<OnboardingPageBody> {
   ];
 
   final List<String> subtitles = [
-    "Order groceries, medicines and meals\ndelivered straight to your door",
-    "Send or receive items from other users quickly\nand easily",
+    "Order groceries, medicines and meals delivered straight to your door",
+    "Send or receive items from other users quickly and easily",
     "Discover exclusive sales and deals every day",
   ];
 
@@ -87,7 +89,7 @@ class _OnboardingPageBodyState extends State<OnboardingPageBody> {
         // المحتوى
         SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 100),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
             child: Column(
               children: [
                 Image.asset("assets/icon/nawel.png", height: 335, width: 335),
@@ -102,26 +104,13 @@ class _OnboardingPageBodyState extends State<OnboardingPageBody> {
                 Gap(50),
 
                 // زرار Get Started
-                SizedBox(
-                  width: double.infinity,
-                  height: 55,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // action
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF8900FE),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Text("Get Started", style: AppFonts.font18Medium),
-                  ),
+                CustomPrimaryButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.loginRoute);
+                  },
+                  text: "Get Started",
                 ),
-
                 Gap(20),
-
-                // زرار Next
                 TextButton(
                   onPressed: _nextText,
                   child: Text(
