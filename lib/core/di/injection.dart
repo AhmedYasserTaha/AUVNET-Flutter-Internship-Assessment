@@ -52,5 +52,4 @@ Future<void> init() async {
   sl.registerFactory(() => PopularBloc(GetPopularItemsUseCase(sl())));
   // أو لو فيه Impl اعملها
   sl.registerLazySingleton(() => GetPopularItemsUseCase(sl()));
-  sl.registerFactory(() => PopularBloc(sl()));
 }

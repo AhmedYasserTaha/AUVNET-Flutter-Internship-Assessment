@@ -1,6 +1,9 @@
 import 'package:e_commerce_app/app/routes.dart';
 import 'package:e_commerce_app/core/di/injection.dart';
 import 'package:e_commerce_app/core/network/network_constants.dart';
+import 'package:e_commerce_app/features/home/data/model/best_order_model.dart';
+import 'package:e_commerce_app/features/home/data/model/popular_model.dart';
+import 'package:e_commerce_app/features/home/data/model/service_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -11,6 +14,12 @@ Future<void> main() async {
 
   try {
     await Hive.initFlutter();
+    Hive.registerAdapter(ServiceModelAdapter());
+    Hive.registerAdapter(BestOrderModelAdapter());
+    Hive.registerAdapter(PopularModelAdapter());
+
+    await Hive.openBox<ServiceModel>('ServiceModelBox');
+
     await Supabase.initialize(
       url: NetworkConstants.supabaseUrl,
       anonKey: NetworkConstants.supabaseAnonKey,
