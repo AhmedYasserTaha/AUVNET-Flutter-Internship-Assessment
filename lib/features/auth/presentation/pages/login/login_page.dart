@@ -10,7 +10,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Use BlocProvider to provide an instance of AuthBloc to LoginPageBody and its descendant widgets
+      // This allows LoginPageBody to access AuthBloc to send events and listen to states
       body: BlocProvider<AuthBloc>(
+        // `sl<AuthBloc>()` assumes you are using get_it for Dependency Injection
+        // It creates or fetches a registered instance of AuthBloc
         create: (_) => sl<AuthBloc>(),
         child: const LoginPageBody(),
       ),

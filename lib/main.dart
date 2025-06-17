@@ -6,13 +6,17 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Supabase.initialize(
-    url: 'https://pnmwhbfqkwiksdqmpzgl.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBubXdoYmZxa3dpa3NkcW1wemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwOTE3MTMsImV4cCI6MjA2NTY2NzcxM30.At64qFi0SNKOQ2DrSolCC22VrNj1WgTcDszZXGwKNsw',
-  );
-
-  await init();
+  try {
+    await Supabase.initialize(
+      url: 'https://pnmwhbfqkwiksdqmpzgl.supabase.co',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBubXdoYmZxa3dpa3NkcW1wemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwOTE3MTMsImV4cCI6MjA2NTY2NzcxM30.At64qFi0SNKOQ2DrSolCC22VrNj1WgTcDszZXGwKNsw',
+    );
+    await init();
+  } catch (e) {
+    print('Error during initialization: $e');
+    // يمكنك هنا عرض رسالة خطأ للمستخدم أو إعادة توجيه لشاشة خطأ
+  }
 
   runApp(const MyApp());
 }

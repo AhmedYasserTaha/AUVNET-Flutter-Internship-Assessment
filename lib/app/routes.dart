@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/features/auth/presentation/pages/login/login_page.dart';
 import 'package:e_commerce_app/features/auth/presentation/pages/sign_up/sign_up_page.dart';
-import 'package:e_commerce_app/features/home/home_layout.dart';
+import 'package:e_commerce_app/features/home/presentation/home_layout.dart';
 import 'package:e_commerce_app/features/onbording/onboarding_page.dart';
 import 'package:e_commerce_app/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';

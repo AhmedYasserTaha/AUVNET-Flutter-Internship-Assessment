@@ -14,12 +14,14 @@ class LoginPageBody extends StatefulWidget {
 class _LoginPageBodyState extends State<LoginPageBody> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  // You can add a GlobalKey<FormState> here if you need form validation
   // final _formKey = GlobalKey<FormState>(); // Add if you need form validation
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    // Ensure controllers are disposed when the widget is removed from the tree to prevent memory leaks
     super.dispose();
   }
 
@@ -31,20 +33,24 @@ class _LoginPageBodyState extends State<LoginPageBody> {
         children: [
           Image.asset("assets/icon/nawel.png"),
           const Gap(10),
+          // You can uncomment Form and _formKey if you want to add input validation
           // Form( // Uncomment if you add _formKey and validation
           //   key: _formKey,
           //   child:
+          // Custom widget for email and password input fields
           LoginFormFields(
             emailController: _emailController,
             passwordController: _passwordController,
           ),
           // ),
           const Gap(26),
+          // Custom widget for the login button
           LoginButton(
             emailController: _emailController,
             passwordController: _passwordController,
           ),
           const Gap(20),
+          // Custom widget for the button to redirect to the create account page
           const SignUpRedirectButton(),
         ],
       ),

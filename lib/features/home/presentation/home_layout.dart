@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/core/widgets/custom_nav_bar.dart';
-import 'package:e_commerce_app/features/home/home_page.dart';
+import 'package:e_commerce_app/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeLayout extends StatefulWidget {
