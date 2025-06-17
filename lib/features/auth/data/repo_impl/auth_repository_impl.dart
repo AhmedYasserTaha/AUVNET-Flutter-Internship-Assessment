@@ -38,8 +38,26 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> login({required String email, required String password}) {
-    // ... login implementation
-    throw UnimplementedError();
+  Future<void> login({required String email, required String password}) async {
+    try {
+      final AuthResponse response = await supabaseClient.auth
+          .signInWithPassword(email: email, password: password);
+
+      if (response.user == null) {
+        // This case might indicate an issue even if no AuthException was thrown,
+        // e.g., if the user is not confirmed and your Supabase settings prevent login.
+        throw AuthException(
+          'Login failed: User is null or session not established.',
+        );
+      }
+      // Login successful, Supabase client handles the session.
+    } on AuthException catch (e) {
+      // Re-throw Supabase auth exceptions to be caught by the BLoC
+      throw AuthException(e.message);
+    } catch (e) {
+      throw Exception(
+        'An unexpected error occurred during login: ${e.toString()}',
+      );
+    }
   }
 }

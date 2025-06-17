@@ -140,7 +140,10 @@ class _SignUpPageBodyState extends State<SignUpPageBody> {
                               (route) => false,
                             );
                           },
-                  child: Text("Create an account", style: AppFonts.font14Bold),
+                  child: Text(
+                    "Already have an account",
+                    style: AppFonts.font14Bold,
+                  ),
                 );
               },
             ),
