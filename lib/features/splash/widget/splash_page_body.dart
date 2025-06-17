@@ -31,7 +31,7 @@ class _SplashPageBodyState extends State<SplashPageBody> {
       Navigator.pushReplacementNamed(context, AppRoutes.homeRoute);
     } else {
       // المستخدم غير مسجل دخوله
-      Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
+      Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
     }
   }
 
