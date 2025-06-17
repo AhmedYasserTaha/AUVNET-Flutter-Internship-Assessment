@@ -5,6 +5,12 @@
 This project is a simple e-commerce Flutter app developed using **Clean Architecture** and **BLoC pattern** for state management. It leverages **Supabase** as a backend service for authentication and data management, and uses **Hive** for local caching to support offline usage.
 
 ---
+⚠️ Important Note
+⚠️ Important Note
+Please log in using a valid email address. A confirmation message will be sent to your email, and you must verify it to be able to log in again.
+⚠️ Important Note
+⚠️ Important Note
+
 
 ## Installation & Setup
 
