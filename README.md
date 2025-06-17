@@ -20,69 +20,12 @@ This project is a simple e-commerce Flutter app developed using **Clean Architec
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/YourUsername/AUVNET-Flutter-Internship-Assessment.git
+   git clone https://github.com/AhmedYasserTaha/AUVNET-Flutter-Internship-Assessment
    cd AUVNET-Flutter-Internship-Assessment
    flutter pub get
    flutter run
 2. **Project Structure**
-lib/
-├── app/
-│   ├── app_colors.dart
-│   ├── app_fonts.dart
-│   └── app_themes.dart
-├── core/
-│   ├── di/
-│   │   └── injection.dart
-│   ├── error/
-│   │   └── failure.dart
-│   ├── network/
-│   │   ├── network_constants.dart
-│   │   └── network.dart
-│   └── widgets/
-│       ├── custom_button.dart
-│       ├── custom_nav_bar.dart
-│       └── custom_text_form_field.dart
-├── features/
-│   ├── auth/
-│   │   ├── data/
-│   │   │   ├── auth_repository_impl.dart
-│   │   │   └── auth_repository.dart
-│   │   ├── domain/
-│   │   │   ├── repositories/
-│   │   │   │   └── auth_repository.dart
-│   │   │   └── usecases/
-│   │   │       ├── login_usecase.dart
-│   │   │       └── signup_usecase.dart
-│   │   └── presentation/
-│   │       ├── bloc/
-│   │       │   ├── auth_bloc.dart
-│   │       │   ├── auth_event.dart
-│   │       │   └── auth_state.dart
-│   │       ├── login/
-│   │       │   ├── widget/
-│   │       │   └── login_page.dart
-│   │       └── sign_up/
-│   │           ├── widget/
-│   │           ├── sign_up_page_body.dart
-│   │           └── sign_up_page.dart
-│   ├── home/
-│   │   ├── data/
-│   │   │   ├── model/
-│   │   │   └── repositories/
-│   │   ├── domain/
-│   │   │   ├── repositories/
-│   │   │   └── usecases/
-│   │   └── presentation/
-│   │       ├── bloc/
-│   │       ├── widget/
-│   │       ├── home_layout.dart
-│   │       └── home_page.dart
-│   ├── onboarding/
-│   │   ├── widget/
-│   │   └── onboarding_page.dart
-│   └── splash/
-│       ├── widget/
-│       └── splash_page.dart
-└── main.dart
+
+![Screenshot 2025-06-17 205652](https://github.com/user-attachments/assets/a27bbe24-02b7-47c5-b73a-80ca1ca53d94)
 
 
