@@ -14,6 +14,7 @@ class ServicesRepo {
 
       // ignore: unnecessary_null_comparison
       // Check if the response is null or does not contain data
+      // ignore: unnecessary_null_comparison
       if (response == null || response.isEmpty) {
         print('Supabase returned null or empty response');
         return [];

@@ -15,7 +15,6 @@ Future<void> main() async {
     await init();
   } catch (e) {
     print('Error during initialization: $e');
-    // يمكنك هنا عرض رسالة خطأ للمستخدم أو إعادة توجيه لشاشة خطأ
   }
 
   runApp(const MyApp());
