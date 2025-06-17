@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:e_commerce_app/core/usecases/login_usecase.dart';
-import 'package:e_commerce_app/core/usecases/sign_up_usecase.dart';
+import 'package:e_commerce_app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:e_commerce_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:meta/meta.dart';
 
 part 'auth_event.dart';

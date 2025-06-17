@@ -1,16 +1,19 @@
 import 'package:e_commerce_app/app/routes.dart';
 import 'package:e_commerce_app/core/di/injection.dart';
+import 'package:e_commerce_app/core/network/network_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   try {
+    await Hive.initFlutter();
     await Supabase.initialize(
-      url: 'https://pnmwhbfqkwiksdqmpzgl.supabase.co',
-      anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBubXdoYmZxa3dpa3NkcW1wemdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwOTE3MTMsImV4cCI6MjA2NTY2NzcxM30.At64qFi0SNKOQ2DrSolCC22VrNj1WgTcDszZXGwKNsw',
+      url: NetworkConstants.supabaseUrl,
+      anonKey: NetworkConstants.supabaseAnonKey,
     );
     await init();
   } catch (e) {

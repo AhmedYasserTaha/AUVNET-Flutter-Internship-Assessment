@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/home/data/repositories/services_repo.dart';
+import 'package:e_commerce_app/features/home/domain/repositories/services_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'services_event.dart';
 import 'services_state.dart';

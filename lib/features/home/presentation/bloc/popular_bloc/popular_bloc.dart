@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/usecases/get_popular_items_use_case.dart';
+import 'package:e_commerce_app/features/home/domain/usecases/get_popular_items_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'popular_event.dart';
 import 'popular_state.dart';

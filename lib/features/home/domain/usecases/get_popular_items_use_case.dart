@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/features/home/data/model/popular_model.dart';
-import 'package:e_commerce_app/features/home/data/repositories/popular_repo.dart';
+import 'package:e_commerce_app/features/home/domain/repositories/popular_repo.dart';
 
 class GetPopularItemsUseCase {
   final PopularRepo repository;
