@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/app/app_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
 class GetCodeWidget extends StatelessWidget {
@@ -28,7 +27,7 @@ class GetCodeWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             children: [
-              SvgPicture.asset("assets/icon/Security.svg"),
+              Image.asset("assets/icon/2.jpg"),
               Gap(5),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

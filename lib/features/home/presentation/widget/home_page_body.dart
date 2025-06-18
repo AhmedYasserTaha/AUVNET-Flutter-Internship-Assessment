@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/app/app_colors.dart';
 import 'package:e_commerce_app/app/app_fonts.dart';
-
 import 'package:e_commerce_app/features/home/presentation/widget/bset_order_widget.dart';
 import 'package:e_commerce_app/features/home/presentation/widget/get_code_widget.dart';
 import 'package:e_commerce_app/features/home/presentation/widget/popular_widget.dart';
