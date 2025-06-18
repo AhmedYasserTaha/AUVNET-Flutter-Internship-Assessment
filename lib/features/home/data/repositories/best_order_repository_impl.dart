@@ -15,6 +15,7 @@ class BestOrderRepositoryImpl implements BestOrderRepository {
     try {
       final response = await supabase.from('services').select();
 
+      // ignore: unnecessary_null_comparison
       if (response == null || response.isEmpty) {
         return box.values.toList(); // رجع الكاش لو مفيش بيانات
       }

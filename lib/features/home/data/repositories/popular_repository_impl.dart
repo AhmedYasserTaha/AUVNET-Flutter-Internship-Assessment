@@ -15,6 +15,7 @@ class PopularRepositoryImpl implements PopularRepo {
     try {
       final response = await supabase.from('popular').select();
 
+      // ignore: unnecessary_null_comparison
       if (response == null || response.isEmpty) {
         // رجع الكاش لو مفيش بيانات من السيرفر
         return box.values.toList();

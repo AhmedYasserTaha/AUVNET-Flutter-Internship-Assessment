@@ -57,9 +57,11 @@ class _BestOrderWidgetState extends State<BestOrderWidget> {
               SmoothPageIndicator(
                 controller: _controller,
                 count: images.length,
-                effect: const ExpandingDotsEffect(
+                effect: const WormEffect(
                   dotHeight: 8,
                   dotWidth: 8,
+                  dotColor: Colors.grey,
+
                   activeDotColor: AppColors.primaryButtonColor,
                 ),
               ),

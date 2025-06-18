@@ -15,6 +15,7 @@ class ServicesRepositoryImpl implements ServicesRepo {
     try {
       final response = await supabase.from('services_table').select();
 
+      // ignore: unnecessary_null_comparison
       if (response == null || response.isEmpty) {
         // لو مفيش داتا في السيرفر، رجع الكاش
         return box.values.toList();
