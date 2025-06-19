@@ -6,9 +6,13 @@ This project is a simple e-commerce Flutter app developed using **Clean Architec
 
 ---
 ⚠️ Important Note
+
 ⚠️ Important Note
+
 Please log in using a valid email address. A confirmation message will be sent to your email, and you must verify it to be able to log in again.
+
 ⚠️ Important Note
+
 ⚠️ Important Note
 
 
