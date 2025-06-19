@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/app/app_fonts.dart';
 import 'package:e_commerce_app/features/home/presentation/bloc/popular_bloc/popular_bloc.dart';
 import 'package:e_commerce_app/features/home/presentation/bloc/popular_bloc/popular_state.dart';
@@ -47,7 +48,21 @@ class PopularWidget extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(5),
                           // Display the network image
-                          child: Image.network(item.imageUrl),
+                          child: CachedNetworkImage(
+                            imageUrl: item.imageUrl,
+                            fit: BoxFit.fill,
+                            placeholder:
+                                (context, url) => const Center(
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2.0,
+                                  ),
+                                ),
+                            errorWidget:
+                                (context, url, error) => const Icon(
+                                  Icons.broken_image,
+                                  color: Colors.grey,
+                                ),
+                          ),
                         ),
                       ),
                     ),

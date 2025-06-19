@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/app/app_colors.dart';
 import 'package:e_commerce_app/features/home/presentation/bloc/best_order_bloc/best_order_bloc.dart';
 import 'package:e_commerce_app/features/home/presentation/bloc/best_order_bloc/best_order_event.dart';
@@ -45,7 +46,9 @@ class _BestOrderWidgetState extends State<BestOrderWidget> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                          image: NetworkImage(images[index].imageUrl),
+                          image: CachedNetworkImageProvider(
+                            images[index].imageUrl,
+                          ),
                           fit: BoxFit.cover,
                         ),
                       ),
