@@ -38,4 +38,11 @@ Please log in using a valid email address. A confirmation message will be sent t
 
 ![Screenshot 2025-06-17 205652](https://github.com/user-attachments/assets/a27bbe24-02b7-47c5-b73a-80ca1ca53d94)
 
+## 📱 Screenshots
+
+Here’s a preview of the app UI:
+
+![Untitled design](https://github.com/user-attachments/assets/ca02c349-e249-487b-8b32-6e931d869c26)
+
+
 
