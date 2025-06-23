@@ -65,8 +65,8 @@ abstract class AppFonts {
     color: AppColors.blackColor,
   );
   static TextStyle font30Bold = GoogleFonts.rubik(
-    fontSize: 30,
-    fontWeight: FontWeight.w700,
+    fontSize: 22,
+    fontWeight: FontWeight.w500,
     color: AppColors.whiteColor,
   );
   static TextStyle font20Bold = GoogleFonts.dmSans(

@@ -6,9 +6,11 @@ class SignUpFormFields extends StatelessWidget {
   final TextEditingController email;
   final TextEditingController password;
   final TextEditingController confirmPassword;
+  final TextEditingController name;
 
   const SignUpFormFields({
     required this.email,
+    required this.name,
     required this.password,
     required this.confirmPassword,
   });
@@ -17,6 +19,17 @@ class SignUpFormFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        CustomTextFormField(
+          controller: name,
+          hintText: "name",
+          icon: Icons.person_2_outlined,
+          validator: (value) {
+            if (value == null || value.isEmpty) return 'Please enter your name';
+            return null;
+          },
+        ),
+        const Gap(20),
+
         CustomTextFormField(
           controller: email,
           hintText: "email",
@@ -32,7 +45,7 @@ class SignUpFormFields extends StatelessWidget {
         CustomTextFormField(
           controller: password,
           hintText: "password",
-          icon: Icons.lock,
+          icon: Icons.lock_open_rounded,
           obscureText: true,
           validator: (value) {
             if (value == null || value.isEmpty)
@@ -46,7 +59,7 @@ class SignUpFormFields extends StatelessWidget {
         CustomTextFormField(
           controller: confirmPassword,
           hintText: "confirm password",
-          icon: Icons.lock,
+          icon: Icons.lock_open_rounded,
           obscureText: true,
           validator: (value) {
             if (value == null || value.isEmpty)

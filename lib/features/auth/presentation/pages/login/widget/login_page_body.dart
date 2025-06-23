@@ -15,7 +15,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   // You can add a GlobalKey<FormState> here if you need form validation
-  // final _formKey = GlobalKey<FormState>(); // Add if you need form validation
+  final _formKey = GlobalKey<FormState>(); // Add if you need form validation
 
   @override
   void dispose() {
@@ -38,14 +38,18 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           //   key: _formKey,
           //   child:
           // Custom widget for email and password input fields
-          LoginFormFields(
-            emailController: _emailController,
-            passwordController: _passwordController,
+          Form(
+            key: _formKey,
+            child: LoginFormFields(
+              emailController: _emailController,
+              passwordController: _passwordController,
+            ),
           ),
           // ),
           const Gap(26),
           // Custom widget for the login button
           LoginButton(
+            formKey: _formKey,
             emailController: _emailController,
             passwordController: _passwordController,
           ),

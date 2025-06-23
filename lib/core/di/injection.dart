@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/auth/domain/usecases/get_current_user_use_case.dart';
 import 'package:e_commerce_app/features/home/domain/usecases/get_popular_items_use_case.dart';
 import 'package:e_commerce_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:e_commerce_app/features/auth/domain/usecases/login_usecase.dart';
@@ -36,9 +37,17 @@ Future<void> init() async {
   // ✅ UseCases
   sl.registerLazySingleton(() => SignUpUseCase(sl()));
   sl.registerLazySingleton(() => LoginUseCase(sl())); // ✅ Add this
+  sl.registerLazySingleton(() => UpdateAvatarUseCase(sl()));
 
   // ✅ Bloc
-  sl.registerFactory(() => AuthBloc(signUpUseCase: sl(), loginUseCase: sl()));
+  sl.registerFactory(
+    () => AuthBloc(
+      sl(), // This is the positional argument for updateAvatarUseCase
+      signUpUseCase: sl(),
+      loginUseCase: sl(),
+    ),
+  );
+
   // 🟦 Services
   sl.registerLazySingleton<ServicesRepo>(
     () => ServicesRepositoryImpl(Supabase.instance.client),
@@ -52,4 +61,7 @@ Future<void> init() async {
   sl.registerFactory(() => PopularBloc(GetPopularItemsUseCase(sl())));
   // أو لو فيه Impl اعملها
   sl.registerLazySingleton(() => GetPopularItemsUseCase(sl()));
+  sl.registerLazySingleton<GetCurrentUserUseCase>(
+    () => GetCurrentUserUseCase(sl<AuthRepository>()),
+  );
 }

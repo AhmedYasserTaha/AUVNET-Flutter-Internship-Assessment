@@ -2,15 +2,18 @@ import 'package:e_commerce_app/app/app_fonts.dart';
 import 'package:e_commerce_app/app/routes.dart';
 import 'package:e_commerce_app/core/widgets/custom_button.dart';
 import 'package:e_commerce_app/features/auth/presentation/bloc/bloc/auth_bloc.dart';
+import 'package:e_commerce_app/features/home/presentation/home_page_arguments.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Custom widget for the login button, interacts with AuthBloc
 class LoginButton extends StatelessWidget {
+  final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
 
   const LoginButton({
+    required this.formKey,
     super.key,
     required this.emailController,
     required this.passwordController,
@@ -25,11 +28,17 @@ class LoginButton extends StatelessWidget {
       listener: (context, state) {
         // If authentication state is successful (AuthSuccess)
         if (state is AuthSuccess) {
+          final args = HomePageArguments(
+            userName: state.user?.userMetadata?['display_name'],
+            avatarUrl: state.user?.userMetadata?['avatar_url'],
+          );
+
           // Navigate to the home screen and remove all previous screens from the stack
           Navigator.pushNamedAndRemoveUntil(
             context,
             AppRoutes.homeRoute,
             (route) => false,
+            arguments: args,
           );
           // Show a login success message
           ScaffoldMessenger.of(
@@ -54,12 +63,22 @@ class LoginButton extends StatelessWidget {
           onPressed: () {
             // When the button is pressed, send a SignInRequested event to AuthBloc
             // passing the email and password from the controllers
-            context.read<AuthBloc>().add(
-              SignInRequested(
-                email: emailController.text.trim(),
-                password: passwordController.text.trim(),
-              ),
-            );
+            // context.read<AuthBloc>().add(
+            //   SignInRequested(
+            //     email: emailController.text.trim(),
+            //     password: passwordController.text.trim(),
+            //   ),
+            // );
+            if (formKey.currentState?.validate() ?? false) {
+              // When the button is pressed, send a SignInRequested event to AuthBloc
+              // passing the email and password from the controllers
+              context.read<AuthBloc>().add(
+                SignInRequested(
+                  email: emailController.text.trim(),
+                  password: passwordController.text.trim(),
+                ),
+              );
+            }
           },
         );
       },
